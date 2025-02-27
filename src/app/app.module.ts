@@ -4,7 +4,7 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
-import { RouterOutlet, Routes } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskFormComponent } from './task-form/task-form.component';
@@ -22,6 +22,8 @@ const routes: Routes = [
     BrowserModule, // Doit être importé ici uniquement
     RouterOutlet,
     FormsModule,
+    RouterLink,
+    RouterLinkActive,
   ],
   providers: [provideClientHydration(withEventReplay()), provideRouter(routes)],
   bootstrap: [AppComponent],
