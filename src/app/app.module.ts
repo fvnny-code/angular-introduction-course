@@ -17,8 +17,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, TaskListComponent, TaskFormComponent],
+  declarations: [AppComponent, TaskFormComponent],
   imports: [
+    TaskListComponent,
     BrowserModule, // Doit être importé ici uniquement
     RouterOutlet,
     FormsModule,
