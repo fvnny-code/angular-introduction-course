@@ -18,8 +18,6 @@ const routes: Routes = [
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, // Doit être importé ici uniquement
-        RouterOutlet, FormsModule),
         provideClientHydration(withEventReplay()), provideRouter(routes),
     ]
 })
