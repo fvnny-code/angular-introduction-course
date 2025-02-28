@@ -7,10 +7,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let task of tasks">
-    <td>{{task.title}}</td>
-    <td>{{task.createdAt | date}}</td>
-    <td></td>
-    </tr>
+        <tr *ngFor="let task of tasks">
+            <td>{{ task.title }}</td>
+            <td>{{ task.createdAt | date }}</td>
+        
+            <td><a class="btn btn-primary" [routerLink]="getRoute(task)">Mettre à jour</a></td>
+        </tr>
 </tbody>
 </table>

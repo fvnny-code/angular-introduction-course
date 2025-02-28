@@ -23,9 +23,20 @@ export class TaskService {
   ];
   addTask(task: TaskForm): void {
     this.tasks.push({
-        ...task,
-        id: uuid(),
-        createdAt: new Date()
+      ...task,
+      id: uuid(),
+      createdAt: new Date(),
     });
-}
+  }
+  getTask(id: string): Task {
+    const task = this.tasks.find((task) => task.id === id);
+    if (!task) {
+      throw new Error(`Task with id ${id} not found`);
+    }
+    return task;
+  }
+  updateTask(task: Task) {
+    const index = this.tasks.findIndex(t => t.id === task.id);
+    this.tasks[index] = task;
+  }
 }
