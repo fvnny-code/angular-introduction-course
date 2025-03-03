@@ -39,4 +39,8 @@ export class TaskService {
     const index = this.tasks.findIndex(t => t.id === task.id);
     this.tasks[index] = task;
   }
+  deleteTask(id: string) {
+    const taskIndex = this.tasks.findIndex(t => t.id === id);
+    this.tasks.splice(taskIndex, 1);
+  }
 }

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: '', component: TaskListComponent },
   { path: 'add-task', component: TaskFormComponent },
+  {path: 'update/:id', component: TaskFormComponent},
 ];
 
 @NgModule({

@@ -11,7 +11,11 @@
             <td>{{ task.title }}</td>
             <td>{{ task.createdAt | date }}</td>
         
-            <td><a class="btn btn-primary" [routerLink]="getRoute(task)">Mettre à jour</a></td>
+            <td>
+                <a class="btn btn-primary" [routerLink]="getRoute(task)">Mettre à jour</a>
+                <a class="btn btn-danger" type="button" (click)="deleteTask(task.id)">Supprimer</a>
+            </td>
         </tr>
+        <p *ngIf="!tasks.length">Pas de tâche dans la liste</p>
 </tbody>
 </table>
